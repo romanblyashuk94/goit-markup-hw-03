@@ -90,9 +90,7 @@ address {
     color: var(--accent-text-color);
 }
 /* header styles */
-.header {
-    padding: 25px 0;
-}
+
 .header-content-wrapper {
     display: flex;
     justify-content: space-between;
@@ -109,12 +107,21 @@ address {
     align-items: center;
 }
 
-.nav-menu-list>li {
+.nav-menu-list>.menu-item:not(:last-child) {
     margin-right: 50px;
 }
 
-.nav-menu-list>li:last-child{
-    margin-right: 0;
+.nav-menu-list .link {
+    display: block;
+    padding: 32px 0;
+}
+
+.contact-links-list .link {
+    display: block;
+    padding: 32px 0;
+}
+.nav-menu-list .link:hover {
+    color: var(--accent-text-color);
 }
 .nav-menu .link.active-link{
     color: var(--accent-text-color);
@@ -137,13 +144,10 @@ address {
     display: flex;
 }
 
-.contact-links-list>li {
+.contact-links-list>li:not(:last-child) {
     margin-right: 50px;
 }
 
-.contact-links-list>li:last-child {
-    margin-right: 0;
-}
 .header .contact-link:hover,
 .header .contact-link:focus {
     color: var(--accent-text-color);
@@ -205,7 +209,7 @@ address {
     margin:40px 30px 0 0;
 }
 
-.featers-list .feater-item:nth-child(4n+4) {
+.featers-list .feater-item:nth-child(4n) {
     margin-right: 0;
 }
 
@@ -291,15 +295,11 @@ address {
 }
 
 .footer-contacts {
-    line-height: 1.7;
+    line-height: 1.55;
 }
 
-.footer-contacts>li {
+.footer-contacts>li:not(:last-child) {
     margin-bottom: 9px;
-}
-
-.footer-contacts>li:last-child {
-    margin-bottom: 0;
 }
 
 .footer-contacts .address {
@@ -323,13 +323,10 @@ address {
     justify-content: center;
     margin-bottom: 20px;
 }
-.filters-list .filter-item {
+.filters-list .filter-item:not(:last-child) {
     margin-right: 8px;
 }
 
-.filters-list .filter-item:last-child {
-    margin-right: 0;
-}
 .filters-list .filter-button {
     background: var(--unselected-button-background);
     color: var(--title-text-color);
@@ -353,18 +350,23 @@ address {
 
 .projects-list {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-wrap: wrap;    
 }
 
 .project-item {
-    margin-top: 30px;
-    max-width: 370px;
+    margin: 30px 30px 0 0;
+    max-width: calc((100% - 60px)/3);
     border: 1px solid #EEEEEE;
     overflow: hidden;
 }
 
+.project-item:nth-child(3n) {
+   margin-right: 0;
+}
 
+.project-item img {
+    max-width: 100%;
+}
 .project-item:hover {
     border-color: var(--selected-button-background);
 }
